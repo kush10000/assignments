@@ -4,7 +4,18 @@
 */
 
 function isPalindrome(str) {
+  str = str.toLowerCase();
+  let s = "";
+  let gs = "";
+  for(let i=str.length-1;i>=0;i--){
+    if(str.charAt(i).match(/[a-z]/)){
+      s = s+str.charAt(i).toString();
+      gs = str.charAt(i).toString()+gs;
+    }
+  }
+  if(gs == s)
   return true;
+return false;
 }
 
 module.exports = isPalindrome;

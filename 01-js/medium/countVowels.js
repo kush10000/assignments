@@ -6,7 +6,8 @@
 */
 
 function countVowels(str) {
-    // Your code here
+  let count = (str.match(/[aeiou]/gi)||[]).length;
+    return count;
 }
 
 module.exports = countVowels;
