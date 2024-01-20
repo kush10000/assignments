@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dummy</title>
+</head>
+<body>
+    <div id="container">
+    </div>
+    <button onclick="getData()">get data</button>
+    <script>
+        async function getData(){
+            const response = await fetch("http://localhost:3000/checkup");
+            const finalData = await response.json()
+            document.getElementById("containeer").innerHTML = JSON.stringify(jsonData.data);
+        }
+    </script>
+</body>
+</html>
