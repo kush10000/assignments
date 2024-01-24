@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+<body>
+    <script>
+        function onButtonPress(){
+            const currentValue = document.getElementById("btn").innerHTML;
+            const currentCounter = currentValue.split(" ")[1];
+            const newCounter = parseInt(currentCounter) + 1;
+            document.getElementById("btn").innerHTML = "counter "+newCounter;
+        }
+    </script>
+    <button onclick="onButtonPress()" id="btn" >counter 0</button>
+</body>
+</html>
+
+<!--you have to define all your components once and then all you have to do is update the state of your app, 
+    react takes care of re-rendering your app-->
+    <!--components take state as input and return html-->

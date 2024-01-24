@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample</title>
+</head>
+<body>
+    <script>
+        let timeout;
+        function debounceCalSum(){//read what debouncing is if doubt(also throtling)
+            clearTimeout(timeout);
+            timeout = setTimeout(() =>{calSum()},100)
+        }
+        async function calSum(){
+            let a = document.getElementById("num1").value;
+            let b = document.getElementById("num2").value;
+            let c = document.getElementById("finalSum");
+            let response = await fetch("http://localhost:3000/sum?a="+a+"&"+"b="+b);
+             c.innerHTML = await response.text();
+        }
+    </script>
+    <input id="num1" oninput="debounceCalSum()" type="text" placeholder="first number"></input><br></br>
+    <input id="num2" oninput="debounceCalSum()" type="text" placeholder="second number"></input><br></br>
+    <div id="finalSum"></div>
+</body>
+</html>
